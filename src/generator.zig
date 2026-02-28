@@ -56,6 +56,7 @@ const PATHS = [_][]const u8{
 
 const DOMAIN = "https://stitcher.io";
 const YEARS = [_]u16{ 2024, 2025, 2026 };
+const BUF_SIZE = 8 * 1024 * 1024;
 
 pub fn generate(path: []const u8, count: usize) !void {
     const file = try std.fs.cwd().createFile(path, .{});
@@ -64,7 +65,9 @@ pub fn generate(path: []const u8, count: usize) !void {
     var rng = std.Random.DefaultPrng.init(@intCast(std.time.timestamp()));
     var random = rng.random();
 
-    var big_buf: [4096]u8 = undefined;
+    var buf: [BUF_SIZE]u8 = undefined;
+    var pos: usize = 0;
+    var line_buf: [512]u8 = undefined;
 
     for (0..count) |i| {
         const path_idx = random.intRangeLessThan(usize, 0, PATHS.len);
@@ -75,7 +78,7 @@ pub fn generate(path: []const u8, count: usize) !void {
         const minute: u8 = random.intRangeLessThan(u8, 0, 60);
         const second: u8 = random.intRangeLessThan(u8, 0, 60);
 
-        const line = try std.fmt.bufPrint(&big_buf, "{s}{s},{d:0>4}-{d:0>2}-{d:0>2}T{d:0>2}:{d:0>2}:{d:0>2}+00:00\n", .{
+        const line = try std.fmt.bufPrint(&line_buf, "{s}{s},{d:0>4}-{d:0>2}-{d:0>2}T{d:0>2}:{d:0>2}:{d:0>2}+00:00\n", .{
             DOMAIN,
             PATHS[path_idx],
             year,
@@ -85,11 +88,21 @@ pub fn generate(path: []const u8, count: usize) !void {
             minute,
             second,
         });
-        try file.writeAll(line);
+
+        if (pos + line.len > BUF_SIZE) {
+            try file.writeAll(buf[0..pos]);
+            pos = 0;
+        }
+        @memcpy(buf[pos .. pos + line.len], line);
+        pos += line.len;
 
         if (i > 0 and i % 10_000_000 == 0) {
             std.debug.print("Generated {} rows...\n", .{i});
         }
+    }
+
+    if (pos > 0) {
+        try file.writeAll(buf[0..pos]);
     }
 
     std.debug.print("Generated {} rows to {s}\n", .{ count, path });
