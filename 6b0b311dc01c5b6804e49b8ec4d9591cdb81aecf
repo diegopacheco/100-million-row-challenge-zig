@@ -1,0 +1,24 @@
+design-doc.md
+  2df713facdf7928e 60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.6",
+  "base_commit_sha": "6b0b311dc01c5b6804e49b8ec4d9591cdb81aecf",
+  "prompts": {
+    "2df713facdf7928e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9cdbbbe4-c1cf-4944-802e-7658d307e027",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "diegopacheco <diego.pacheco.it@gmail.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 0,
+      "accepted_lines": 1,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/a9b83d39e54689359c9daf57c8d1107b88cd418b372dd6ff6aee3cf683e85f1f"
+    }
+  }
+}
