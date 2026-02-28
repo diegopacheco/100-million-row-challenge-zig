@@ -170,6 +170,8 @@ pub fn process(allocator: std.mem.Allocator, input_path: []const u8, output_path
     const data = try std.posix.mmap(null, file_size, std.posix.PROT.READ, .{ .TYPE = .SHARED }, file.handle, 0);
     defer std.posix.munmap(data);
 
+    std.posix.madvise(@alignCast(data.ptr), data.len, std.posix.MADV.SEQUENTIAL) catch {};
+
     const num_threads = std.Thread.getCpuCount() catch 4;
     const chunk_size = file_size / num_threads;
 
