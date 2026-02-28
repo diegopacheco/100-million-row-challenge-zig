@@ -1,0 +1,24 @@
+src/processor.zig
+  2df713facdf7928e 173
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.6",
+  "base_commit_sha": "19d07db23cba43d85f234ec73c62c66c1e761b3b",
+  "prompts": {
+    "2df713facdf7928e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9cdbbbe4-c1cf-4944-802e-7658d307e027",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "diegopacheco <diego.pacheco.it@gmail.com>",
+      "messages": [],
+      "total_additions": 31,
+      "total_deletions": 29,
+      "accepted_lines": 3,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/be459a1a5dfe9a9aded3caeb63f637840f66c945241c7a00f47f9ca2f57e6bea"
+    }
+  }
+}
