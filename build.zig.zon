@@ -1,0 +1,10 @@
+.{
+    .name = .row_challenge,
+    .version = "0.1.0",
+    .fingerprint = 0x211c7b7ebbd11268,
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
