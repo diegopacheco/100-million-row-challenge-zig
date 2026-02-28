@@ -1,0 +1,28 @@
+design-doc.md
+  753072fb14a1e430 1-72
+README.md
+  753072fb14a1e430 30,32,55-73,75-79,98
+src/generator.zig
+  753072fb14a1e430 59,68-70,81,92-97,104-105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.6",
+  "base_commit_sha": "5cccf9b38883d98448c17d20bb2c2c3b00849610",
+  "prompts": {
+    "753072fb14a1e430": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "24413cb6-730e-45b1-b544-e696af732c39",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "diegopacheco <diego.pacheco.it@gmail.com>",
+      "messages": [],
+      "total_additions": 134,
+      "total_deletions": 4,
+      "accepted_lines": 115,
+      "overriden_lines": 19,
+      "messages_url": "https://usegitai.com/cas/83312110d6d9254f8dfee7148d358035e55054522d62955f6f70944cde00ab6d"
+    }
+  }
+}
