@@ -1,0 +1,40 @@
+README.md
+  753072fb14a1e430 1-53
+run.sh
+  753072fb14a1e430 1-14
+src/generator.zig
+  753072fb14a1e430 1-96
+src/main.zig
+  753072fb14a1e430 1-47
+build.zig
+  753072fb14a1e430 1-16
+.gitignore
+  753072fb14a1e430 4
+src/processor.zig
+  753072fb14a1e430 1-224
+build.sh
+  753072fb14a1e430 1-2
+build.zig.zon
+  753072fb14a1e430 1-10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.6",
+  "base_commit_sha": "e79755a266f55dbb344b25c2832c9f63666fb866",
+  "prompts": {
+    "753072fb14a1e430": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "24413cb6-730e-45b1-b544-e696af732c39",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "diegopacheco <diego.pacheco.it@gmail.com>",
+      "messages": [],
+      "total_additions": 506,
+      "total_deletions": 43,
+      "accepted_lines": 463,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/e3fd9ff9f3402120098bc5ca97082c89023f6e40100d28fe520342726dee37af"
+    }
+  }
+}
