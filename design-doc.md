@@ -57,6 +57,7 @@ Pretty-printed JSON with URL paths as keys and date-count maps as values:
 
 ## Performance Considerations
 
+- `madvise(MADV_SEQUENTIAL)` hints the OS for better prefetching of mmap'd data
 - Memory-mapped I/O avoids buffered read overhead
 - Parallel chunk processing saturates all CPU cores
 - Thread-local hashmaps avoid contention
